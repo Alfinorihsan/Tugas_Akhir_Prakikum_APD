@@ -1,3 +1,4 @@
+#START ALL CODINGAN WITH BISMILLAHIRRAHMANIRRAHIM
 import os 
 from prettytable import PrettyTable
 from prettytable.prettytable import NONE
@@ -59,6 +60,8 @@ def show_menu():
 +============================================+
 """)
 
+
+
 #Function Data
 #TAMPIL
 def tampil_data():
@@ -70,37 +73,41 @@ def tampil_data():
         buku_alamat.add_row([index,data_karyawan[index-1][0],data_karyawan[index-1][1],data_karyawan[index-1][2],data_karyawan[index-1][3],data_karyawan[index-1][4]])
     print(buku_alamat)
 
+
+
+
 #TAMBAH
 def tambah_data():
-    y = "y"
-    while y=="y":
-        tampil_data()
-        data_baru =  [input("Masukkan kode Karyawan: "), input("Masukkan Nama karyawan: "), input("Masukkan No. Telepon: "), input("Masukkan e-mail: "), input("Masukkan alamat: ")]
-        data_karyawan.append(data_baru)
-        print("Data karyawan baru berhasil ditambahkan")
-        y = input("Tekan Enter untuk melanjutkan")
-        tampil_data()
-        input("Tekan Enter untuk kembali ke menu pilihan")            
-        clear_screen()
+    tampil_data()
+    data_baru =  [input("Masukkan kode Karyawan: "), input("Masukkan Nama karyawan: "), input("Masukkan No. Telepon: "), input("Masukkan e-mail: "), input("Masukkan alamat: ")]
+    data_karyawan.append(data_baru)
+    print("Data karyawan baru berhasil ditambahkan")
+    input("Tekan Enter untuk melanjutkan")
+    tampil_data()
+    input("Tekan Enter untuk kembali ke menu pilihan")            
+    clear_screen()
+    
+
+
 
 #UBAH
 def ubah_data():
-    y="y"
-    while y=="y":
-        tampil_data()
-        urutan=int(input("Tuliskan nomor yang ingin diubah: "))
-        if urutan is not 0 :
-            if data_karyawan[urutan-1]:
-                data_karyawan[urutan-1][1]=input("Nama Karyawan: ")
-                data_karyawan[urutan-1][2]=input("No. Ponsel: ")
-                data_karyawan[urutan-1][3]=input("E-mail baru: ")
-                data_karyawan[urutan-1][4]=input("Alamat baru: ")
-                print("Menu berhasil diubah")
-                input("Tekan enter untuk melanjutkan")
-                break
-            else :
-                print("Data tidak ada!")
-                
+    tampil_data()
+    urutan=int(input("Tuliskan nomor yang ingin diubah: "))
+    if urutan is not 0 :
+        if data_karyawan[urutan-1]:
+            data_karyawan[urutan-1][1]=input("Nama Karyawan: ")
+            data_karyawan[urutan-1][2]=input("No. Ponsel: ")
+            data_karyawan[urutan-1][3]=input("E-mail baru: ")
+            data_karyawan[urutan-1][4]=input("Alamat baru: ")
+            print("Menu berhasil diubah")
+            input("Tekan enter untuk melanjutkan")
+    
+        else :
+            print("Data tidak ada!")
+        
+
+
 # HAPUS
 def hapus_data():
     tampil_data()
